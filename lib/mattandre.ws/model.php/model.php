@@ -8,7 +8,7 @@
  * @author Matt Andrews <matt@mattandre.ws>
  */
 
-namespace FT\phruitmachine;
+namespace mattandre.ws\model.php;
 
 class Model {
   private $_data;
