@@ -1,0 +1,20 @@
+{
+  "name": "mattandre.ws/model.php",
+  "description": "A PHP port of @wilsonpage's Model",
+  "require": {
+    "phpunit/phpunit": "3.7.*"
+  },
+  "authors": [
+    {
+      "name": "Matt Andrews",
+      "email": "matt@mattandre.ws",
+      "homepage": "http://mattandre.ws"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "mattandre.ws\\Model.php": "lib/"
+    }
+  }
+}
+
