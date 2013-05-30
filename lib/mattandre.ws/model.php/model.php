@@ -3,7 +3,6 @@
  * Simple Model object
  *
  * Based on @wilsonpage's Javascript Model.
- * TODO: Move this into its own repository
  *
  * @copyright The Financial Times Limited [All Rights Reserved]
  * @author Matt Andrews <matt@mattandre.ws>
