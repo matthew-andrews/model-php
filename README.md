@@ -1,6 +1,5 @@
-phruitmachine
+model.php
 =============
 
-PHP port of FT's fruitmachine view rendering engine
+PHP port of @wilsonpage's model.
 
-Phruitmachine is a recursive acronym, which stands for PHP Handled Responsive User Interface Template Machine.
