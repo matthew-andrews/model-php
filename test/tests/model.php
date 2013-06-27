@@ -35,4 +35,15 @@ class ModelTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals('zab', $model->get('baz'));
   }
 
+  public function testCanGetAllData() {
+    $model = new \MattAndrews\Model($this->_sampleData);
+    $this->assertEquals($this->_sampleData, $model->get());
+  }
+
+  public function testSetAndClearChain() {
+    $model = new \MattAndrews\Model();
+    $model->set('apples', 'pears')->clear()->set('123', '456');
+    $this->assertEquals(array('123' => '456'), $model->get());
+  }
+
 }

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php" colors="true">
+<phpunit
+    bootstrap="vendor/autoload.php"
+    colors="true">
+  <php>
+    <ini name="error_reporting" value="E_ALL" />
+  </php>
   <testsuites>
     <testsuite name="model-php test suite">
       <directory suffix=".php">test/tests/</directory>

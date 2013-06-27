@@ -31,9 +31,9 @@ class Model {
    * @return [*]
    * @public
    */
-  public function get($key) {
+  public function get($key = null) {
     return $key
-      ? $this->_data[$key]
+      ? (isset($this->_data[$key]) ? $this->_data[$key] : null)
       : $this->_data;
   }
 
