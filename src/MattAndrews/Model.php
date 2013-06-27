@@ -10,7 +10,7 @@ namespace MattAndrews;
  * @author Matt Andrews <matt@mattandre.ws>
  */
 
-class Model {
+class Model implements ModelInterface {
   private $_data;
 
   /**
