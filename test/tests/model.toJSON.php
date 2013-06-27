@@ -1,7 +1,5 @@
 <?php
-namespace FT\phruitmachine;
-
-require_once(__DIR__ . '/../../../vendor/autoload.php');
+namespace MattAndrews;
 
 class ModelToJSONTest extends \PHPUnit_Framework_TestCase {
 

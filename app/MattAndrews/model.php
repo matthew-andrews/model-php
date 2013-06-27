@@ -1,4 +1,6 @@
 <?php
+namespace MattAndrews;
+
 /**
  * Simple Model object
  *
@@ -7,8 +9,6 @@
  * @copyright The Financial Times Limited [All Rights Reserved]
  * @author Matt Andrews <matt@mattandre.ws>
  */
-
-namespace mattandre.ws\model.php;
 
 class Model {
   private $_data;

@@ -1,20 +1,20 @@
 <?php
-namespace FT\phruitmachine;
-
-require_once(__DIR__ . '/../../../vendor/autoload.php');
+namespace MattAndrews;
 
 class ModelTest extends \PHPUnit_Framework_TestCase {
 
-  public function testStoresTheArrayPassedIntoTheConstructor() {
-    $model = new Model(array(
-      'foo' => 'foo',
-      'bar' => 'bar',
-      'baz' => 'baz'
-    ));
+  private $_sampleData = array(
+    'foo' => 'oof',
+    'bar' => 'rab',
+    'baz' => 'zab'
+  );
 
-    $this->assertEquals('foo', $model->get('foo'));
-    $this->assertEquals('bar', $model->get('bar'));
-    $this->assertEquals('baz', $model->get('baz'));
+  public function testStoresTheArrayPassedIntoTheConstructor() {
+    $model = new Model($this->_sampleData);
+
+    $this->assertEquals('oof', $model->get('foo'));
+    $this->assertEquals('rab', $model->get('bar'));
+    $this->assertEquals('zab', $model->get('baz'));
   }
 
   public function testCanBeConstructedWithNoData() {
@@ -25,6 +25,15 @@ class ModelTest extends \PHPUnit_Framework_TestCase {
       $threwException = true;
     }
     $this->assertFalse($threwException);
+  }
+
+  public function testCanOverwriteSpecificKey() {
+    $model = new Model($this->_sampleData);
+    $model->set('foo', 'foobar');
+
+    $this->assertEquals('foobar', $model->get('foo'));
+    $this->assertEquals('rab', $model->get('bar'));
+    $this->assertEquals('zab', $model->get('baz'));
   }
 
 }

@@ -1,5 +1,5 @@
 {
-  "name": "mattandre.ws/model.php",
+  "name": "MattAndrews/model-php",
   "description": "A PHP port of @wilsonpage's Model",
   "require": {
     "phpunit/phpunit": "3.7.*"
@@ -13,8 +13,7 @@
   ],
   "autoload": {
     "psr-0": {
-      "mattandre.ws\\model.php": "lib/"
+      "MattAndrews": "app/"
     }
   }
 }
-
