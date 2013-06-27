@@ -1,5 +1,4 @@
 <?php
-namespace MattAndrews;
 
 class ModelTest extends \PHPUnit_Framework_TestCase {
 
@@ -10,7 +9,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase {
   );
 
   public function testStoresTheArrayPassedIntoTheConstructor() {
-    $model = new Model($this->_sampleData);
+    $model = new \MattAndrews\Model($this->_sampleData);
 
     $this->assertEquals('oof', $model->get('foo'));
     $this->assertEquals('rab', $model->get('bar'));
@@ -20,7 +19,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase {
   public function testCanBeConstructedWithNoData() {
     $threwException = false;
     try {
-      $model = new Model();
+      $model = new \MattAndrews\Model();
     } catch (Exception $exception) {
       $threwException = true;
     }
@@ -28,7 +27,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase {
   }
 
   public function testCanOverwriteSpecificKey() {
-    $model = new Model($this->_sampleData);
+    $model = new \MattAndrews\Model($this->_sampleData);
     $model->set('foo', 'foobar');
 
     $this->assertEquals('foobar', $model->get('foo'));

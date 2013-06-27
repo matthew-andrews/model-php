@@ -1,10 +1,9 @@
 <?php
-namespace MattAndrews;
 
 class ModelToJSONTest extends \PHPUnit_Framework_TestCase {
 
   public function testStoresTheArrayPassedIntoTheConstructor() {
-    $model = new Model(array(
+    $model = new \MattAndrews\Model(array(
       'foo' => 'foo',
       'bar' => 'bar',
       'baz' => 'baz'
