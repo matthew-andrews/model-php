@@ -2,7 +2,7 @@
 
 class ModelToJSONTest extends \PHPUnit_Framework_TestCase {
 
-  public function testStoresTheArrayPassedIntoTheConstructor() {
+  public function test_stores_the_array_passed_into_the_constructor() {
     $model = new \MattAndrews\Model(array(
       'foo' => 'foo',
       'bar' => 'bar',

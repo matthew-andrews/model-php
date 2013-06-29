@@ -98,7 +98,7 @@ class Model implements ModelInterface {
    * @return [Array]
    */
   public function toJSON() {
-    return $_data;
+    return $this->_data;
   }
 
 }

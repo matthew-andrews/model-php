@@ -8,7 +8,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase {
     'baz' => 'zab'
   );
 
-  public function testStoresTheArrayPassedIntoTheConstructor() {
+  public function test_stores_the_array_passed_into_the_constructor() {
     $model = new \MattAndrews\Model($this->_sampleData);
 
     $this->assertEquals('oof', $model->get('foo'));
@@ -16,7 +16,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals('zab', $model->get('baz'));
   }
 
-  public function testCanBeConstructedWithNoData() {
+  public function test_can_be_constructed_with_no_data() {
     $threwException = false;
     try {
       $model = new \MattAndrews\Model();
@@ -26,7 +26,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase {
     $this->assertFalse($threwException);
   }
 
-  public function testCanOverwriteSpecificKey() {
+  public function test_can_overwrite_specific_key() {
     $model = new \MattAndrews\Model($this->_sampleData);
     $model->set('foo', 'foobar');
 
@@ -35,15 +35,21 @@ class ModelTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals('zab', $model->get('baz'));
   }
 
-  public function testCanGetAllData() {
+  public function test_can_get_all_data() {
     $model = new \MattAndrews\Model($this->_sampleData);
     $this->assertEquals($this->_sampleData, $model->get());
   }
 
-  public function testSetAndClearChain() {
+  public function test_set_and_clear_chain() {
     $model = new \MattAndrews\Model();
     $model->set('apples', 'pears')->clear()->set('123', '456');
     $this->assertEquals(array('123' => '456'), $model->get());
+  }
+
+  public function test_to_json() {
+    $model = new \MattAndrews\Model(array('a' => 1));
+    $actual = $model->toJSON();
+    $this->assertEquals(array('a' => 1), $actual);
   }
 
 }
