@@ -52,4 +52,31 @@ class ModelTest extends \PHPUnit_Framework_TestCase {
         $actual = $model->toJSON();
         $this->assertEquals(array('apple' => 'pear'), $actual);
     }
+
+    public function testSetAcceptsArrays() {
+        $model = new \MattAndrews\Model();
+        $model->set(array(
+            'test' => 1,
+            'test2' => 2
+        ));
+        $this->assertEquals(1, $model->get('test'));
+        $this->assertEquals(2, $model->get('test2'));
+        $model->set(array(
+            'test2' => 3,
+            'cats' => 'dogs'
+        ));
+        $this->assertEquals(3, $model->get('test2'));
+        $this->assertEquals('dogs', $model->get('cats'));
+    }
+
+    public function testDestroyClears() {
+        $model = new \MattAndrews\Model();
+        $model->set(array(
+            'test' => 'blah'
+        ));
+
+        $model->destroy();
+        $this->assertEquals(null, $model->get('test'));
+    }
+
 }

@@ -11,7 +11,7 @@ namespace MattAndrews;
  */
 
 class Model implements ModelInterface {
-  private $_data;
+  private $_data = array();
 
   /**
    * Model Constructor
@@ -59,7 +59,7 @@ class Model implements ModelInterface {
 
     // Merge the object into the data store
     if (is_array($data)) {
-      array_merge($this->_data, $data);
+      $this->_data = array_merge($this->_data, $data);
     }
 
     // Allow chaining
