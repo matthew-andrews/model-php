@@ -1,5 +1,5 @@
 {
-  "name": "MattAndrews/model-php",
+  "name": "mattandrews/model-php",
   "description": "A PHP port of @wilsonpage's Model",
   "require-dev": {
     "phpunit/phpunit": "3.7.*",
